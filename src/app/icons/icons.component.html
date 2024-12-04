@@ -1,0 +1,50 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Les Laveurs</h4>
+                        <p class="card-category">Informations des Laveurs</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prénom
+                                    </th>
+                                    <th>
+                                        Numéro CIN
+                                    </th>
+                                    <th>
+                                        Sexe
+                                    </th>
+                                    <th>
+                                        Numéro de téléphone
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let icon of icons">
+                                        <td>{{ icon.id }}</td>
+                                        <td>{{ icon.nom }}</td>
+                                        <td>{{ icon.prenom }}</td>
+                                        <td>{{ icon.cin }}</td>
+                                        <td>{{ icon.sexe }}</td>
+                                        <td>{{ icon.numero }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

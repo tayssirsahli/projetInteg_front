@@ -1,0 +1,7 @@
+.main-content {
+    background-image: url('assets/img.jpg'); /* Chemin vers l'image */
+    background-size: cover;   /* Couvre toute la surface de la div */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    padding: 20px; /* Optionnel, pour ajouter du padding autour du contenu */
+}

@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "nom": "Dr. Ben Amor Omar",
+      "ville": "Ben Arous",
+      "numero_tel": "+216 25987360",
+      "specialite": "Généraliste"
+    },
+    {
+      "id": 2,
+      "nom": "Dr. Ouertani Sahar",
+      "ville": "Tunis",
+      "numero_tel": "+216 53698125",
+      "specialite": "Gynécologue"
+    }
+  ]
+  

@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "nom_agence": "Agence aloulou",
+      "proprietaire": "M. Ahmed",
+      "services": "Traiteurs des événements",
+      "telephone": "+216 12345678",
+      "email": "Aloulou_agence@gmail.com"
+    },
+    {
+      "id": 2,
+      "nom_agence": "Agence Sara",
+      "proprietaire": "Mme. Sarah",
+      "services": "Location des chaises et tentes",
+      "telephone": "+216 87654321",
+      "email": "sarah_sana@yahoo.com"
+    }
+  ]
+  

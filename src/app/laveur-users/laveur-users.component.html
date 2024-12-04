@@ -1,0 +1,18 @@
+<div class="main-content">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let laveur of laveurs">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title text-center">{{ laveur.nom }} {{ laveur.prenom }}</h4>
+            <p class="card-category text-center">Laveur</p>
+          </div>
+          <div class="card-body">
+            <p><strong>ID:</strong> {{ laveur.id }}</p>
+            <p><strong>CIN:</strong> {{ laveur.cin }}</p>
+            <p><strong>Sexe:</strong> {{ laveur.sexe }}</p>
+            <p><strong>Numéro de téléphone:</strong> {{ laveur.numero }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

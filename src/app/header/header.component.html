@@ -1,0 +1,49 @@
+<header class="header">
+    <h1><a href="/#/home">Home</a> </h1>
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+      <button>
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+    <!-- Header Icons and Profile Section (aligned horizontally) -->
+    <div class="header-icons" style="display: flex; align-items: center; justify-content: flex-end;">
+      <!-- Nos Services Dropdown (as text) -->
+      <li class="nav-item dropdown" style="list-style: none; margin-right: 20px;">
+        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="servicesDropdown" data-toggle="dropdown">
+          Nos Services
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/#/medecin-user">Nous medecins diponible</a>
+          <a class="dropdown-item" href="/#/agence-user">Nous Agents</a>
+          <a class="dropdown-item" href="/#/laveur-user">Nous Laveurs</a>
+          <a class="dropdown-item" href="/#/fiche">fiche de deces</a>
+
+        </div>
+      </li>
+
+      <!-- Notifications Icon -->
+      <i class="material-icons" style="margin-right: 20px; cursor: pointer;">notifications</i>
+      
+      <!-- Profile Dropdown -->
+      <li class="nav-item dropdown" style="list-style: none;">
+        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbardrop" data-toggle="dropdown">
+          <i class="material-icons">person</i>
+        </a>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <!-- Logged-in User -->
+          <a class="dropdown-item" href="#">Welcome, Oussema</a>
+          <a class="dropdown-item" href="">Logout</a>
+          <a class="dropdown-item" href="/#/profil-user">Profile</a>
+          
+          <!-- Not Logged-in User -->
+          <ng-template #NOT_LOGGED_IN>
+            <a class="dropdown-item" (click)="onLogin()">Login</a>
+          </ng-template>
+        </div>
+      </li>
+    </div>
+  </header>

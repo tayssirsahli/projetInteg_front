@@ -1,0 +1,70 @@
+<div class="payment-form">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="nom">Nom:</label>
+        <input id="nom" formControlName="nom" />
+        <div *ngIf="paymentForm.get('nom')?.invalid && paymentForm.get('nom')?.touched">
+          Invalid name
+        </div>
+      </div>
+  
+      <div>
+        <label for="prenom">Prenom:</label>
+        <input id="prenom" formControlName="prenom" />
+        <div *ngIf="paymentForm.get('prenom')?.invalid && paymentForm.get('prenom')?.touched">
+          Invalid prenom
+        </div>
+      </div>
+  
+      <div>
+        <label for="email">Adresse Mail:</label>
+        <input id="email" type="email" formControlName="email" />
+        <div *ngIf="paymentForm.get('email')?.invalid && paymentForm.get('email')?.touched">
+          Invalid email address
+        </div>
+      </div>
+  
+      <div>
+        <label for="tel">Telephone:</label>
+        <input id="tel" type="text" formControlName="tel" />
+        <div *ngIf="paymentForm.get('tel')?.invalid && paymentForm.get('tel')?.touched">
+          Invalid telephone number
+        </div>
+      </div>
+  
+      <div>
+        <label for="cardName">Nom de Carte:</label>
+        <input id="cardName" formControlName="cardName" />
+        <div *ngIf="paymentForm.get('cardName')?.invalid && paymentForm.get('cardName')?.touched">
+          Required
+        </div>
+      </div>
+  
+      <div>
+        <label for="cardNumber">Numéro de Carte:</label>
+        <input id="cardNumber" formControlName="cardNumber" />
+        <div *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched">
+          Card number must be 16 digits
+        </div>
+      </div>
+  
+      <div>
+        <label for="expiryDate">Date d'Expiration:</label>
+        <input id="expiryDate" type="date" formControlName="expiryDate" />
+        <div *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched">
+          Expiry date must be after the current date
+        </div>
+      </div>
+  
+      <div>
+        <label for="cvc">CVC:</label>
+        <input id="cvc" formControlName="cvc" />
+        <div *ngIf="paymentForm.get('cvc')?.invalid && paymentForm.get('cvc')?.touched">
+          CVC must be 3 digits
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="paymentForm.invalid">Submit</button>
+    </form>
+  </div>
+  

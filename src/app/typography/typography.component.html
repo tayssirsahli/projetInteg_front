@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Les agences</h4>
+                        <p class="card-category">Informations des agences</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nom de l'agence</th>
+                                        <th>Nom du propriétaire</th>
+                                        <th>Services</th>
+                                        <th>Numéro de téléphone</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let agence of agences">
+                                        <td>{{ agence.id }}</td>
+                                        <td>{{ agence.nom_agence }}</td>
+                                        <td>{{ agence.proprietaire }}</td>
+                                        <td>{{ agence.services }}</td>
+                                        <td>{{ agence.telephone }}</td>
+                                        <td>{{ agence.email }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

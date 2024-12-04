@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nom": "Ben Amor",
+    "prenom": "Omar",
+    "cin": "12345678",
+    "sexe": "Homme",
+    "numero": "+216 25987360"
+  },
+  {
+    "id": 2,
+    "nom": "Ouertani",
+    "prenom": "Sahar",
+    "cin": "23456789",
+    "sexe": "Femme",
+    "numero": "+216 53698125"
+  }
+]

@@ -1,0 +1,21 @@
+.main-content {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  .card-header-danger {
+    background-color: #e53935;
+    color: white;
+  }
+  
+  .btn-danger {
+    border-radius: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  

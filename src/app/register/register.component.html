@@ -1,0 +1,117 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title text-center">Register</h4>
+            <p class="card-category text-center">Enter your details to register</p>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onRegister()">
+              <!-- Sélection du rôle -->
+              <div class="form-group">
+                <label for="role">Select Role</label>
+                <select id="role" class="form-control" [(ngModel)]="selectedRole" name="role" required>
+                  <option value="" disabled selected>Choose a role</option>
+                  <option value="medecin">Médecin</option>
+                  <option value="laveur">Laveur</option>
+                  <option value="agence">Agence</option>
+                </select>
+              </div>
+
+              <!-- Champs communs -->
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" class="form-control" [(ngModel)]="nom" name="nom" required />
+              </div>
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" class="form-control" [(ngModel)]="prenom" name="prenom" required />
+              </div>
+              <div class="form-group">
+                <label for="tel">Téléphone</label>
+                <input type="tel" id="tel" class="form-control" [(ngModel)]="tel" name="tel" required />
+              </div>
+              <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" class="form-control" [(ngModel)]="adresse" name="adresse" required />
+              </div>
+              <div class="form-group">
+                <label for="dateDeNaissance">Date de naissance</label>
+                <input type="date" id="dateDeNaissance" class="form-control" [(ngModel)]="dateDeNaissance"
+                  name="dateDeNaissance" required />
+              </div>
+              <div class="form-group">
+                <label for="prix">Prix</label>
+                <input type="number" id="prix" class="form-control" [(ngModel)]="prix" name="prix" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password"
+                  required />
+              </div>
+
+              <!-- Champs dynamiques -->
+              <div [ngSwitch]="selectedRole">
+                <!-- Médecin -->
+                <div *ngSwitchCase="'medecin'">
+                  <div class="form-group">
+                    <label for="code">Code</label>
+                    <input type="text" id="code" class="form-control" [(ngModel)]="code" name="code" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="numCIN">Numéro CIN</label>
+                    <input type="text" id="numCIN" class="form-control" [(ngModel)]="numCIN" name="numCIN" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="diplome">Diplôme</label>
+                    <input type="file" id="diplome" class="form-control" (change)="onFileSelected($event)"
+                      accept="image/*" required />
+                  </div>
+                  <div *ngIf="diplomePreview" class="text-center">
+                    <img [src]="diplomePreview" alt="Diplôme Preview" class="img-fluid" style="max-height: 150px;" />
+                  </div>
+                </div>
+
+                <!-- Laveur -->
+                <div *ngSwitchCase="'laveur'">
+                  <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select id="genre" class="form-control" [(ngModel)]="genre" name="genre" required>
+                      <option value="" disabled selected>Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                 
+                </div>
+
+                <!-- Agence -->
+                <div *ngSwitchCase="'agence'">
+
+
+                  <div class="form-group">
+                    <label for="service">Service</label>
+                    <input type="text" id="service" class="form-control" [(ngModel)]="service" name="service"
+                      required />
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-block">Register</button>
+            </form>
+
+            <p *ngIf="errorMessage" class="text-danger text-center mt-3">
+              {{ errorMessage }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,168 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title text-center">Profile</h4>
+              <p class="card-category text-center">Enter your details to create an account</p>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="onRegister()">
+                <div class="form-group">
+                  <label for="role">Select Role</label>
+                  <select
+                    id="role"
+                    class="form-control"
+                    [(ngModel)]="selectedRole"
+                    name="role"
+                    required
+                  >
+                    <option value="" disabled selected>Choose a role</option>
+                    <option value="medecin">Médecin</option>
+                    <option value="laveur">Laveur</option>
+                    <option value="agence">Agence</option>
+                  </select>
+                </div>
+  
+                <!-- Common Fields -->
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input
+                    type="text"
+                    id="nom"
+                    class="form-control"
+                    [(ngModel)]="nom"
+                    name="nom"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prénom</label>
+                  <input
+                    type="text"
+                    id="prenom"
+                    class="form-control"
+                    [(ngModel)]="prenom"
+                    name="prenom"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tel">Téléphone</label>
+                  <input
+                    type="tel"
+                    id="tel"
+                    class="form-control"
+                    [(ngModel)]="tel"
+                    name="tel"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    [(ngModel)]="email"
+                    name="email"
+                    required
+                  />
+                </div>
+  
+                <!-- Dynamic Fields -->
+                <div [ngSwitch]="selectedRole">
+                  <!-- Médecin Fields -->
+                  <div *ngSwitchCase="'medecin'">
+                    <div class="form-group">
+                      <label for="code">Code</label>
+                      <input
+                        type="text"
+                        id="code"
+                        class="form-control"
+                        [(ngModel)]="code"
+                        name="code"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="diplome">Diplôme</label>
+                      <input
+                        type="text"
+                        id="diplome"
+                        class="form-control"
+                        [(ngModel)]="diplome"
+                        name="diplome"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="numCIN">Numéro CIN</label>
+                      <input
+                        type="text"
+                        id="numCIN"
+                        class="form-control"
+                        [(ngModel)]="numCIN"
+                        name="numCIN"
+                      />
+                    </div>
+                  </div>
+  
+                  <!-- Laveur Fields -->
+                  <div *ngSwitchCase="'laveur'">
+                    <div class="form-group">
+                      <label for="genre">Genre</label>
+                      <input
+                        type="text"
+                        id="genre"
+                        class="form-control"
+                        [(ngModel)]="genre"
+                        name="genre"
+                      />
+                    </div>
+                  </div>
+  
+                  <!-- Agence Fields -->
+                  <div *ngSwitchCase="'agence'">
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <input
+                        type="text"
+                        id="description"
+                        class="form-control"
+                        [(ngModel)]="description"
+                        name="description"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="prix">Prix Proposé</label>
+                      <input
+                        type="number"
+                        id="prix"
+                        class="form-control"
+                        [(ngModel)]="prix"
+                        name="prix"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="service">Service</label>
+                      <input
+                        type="text"
+                        id="service"
+                        class="form-control"
+                        [(ngModel)]="service"
+                        name="service"
+                      />
+                    </div>
+                  </div>
+                </div>
+  
+                <button type="submit" class="btn btn-danger btn-block">add</button>
+              </form>
+              <p *ngIf="errorMessage" class="text-danger mt-3 text-center">{{ errorMessage }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

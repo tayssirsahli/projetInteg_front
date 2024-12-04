@@ -1,0 +1,70 @@
+
+
+// Variables de couleurs
+$primary-color: #f44336;
+$secondary-color: #ffffff;
+$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+$border-radius: 8px;
+
+// Styles généraux pour le conteneur
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+// Styles pour la carte
+.doctor-card {
+  border: 1px solid lighten($primary-color, 30%);
+  border-radius: $border-radius;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $hover-shadow;
+  }
+
+  .card-header {
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+
+  .doctor-name {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 15px;
+    font-size: 0.95rem;
+
+    p {
+      margin: 5px 0;
+    }
+
+    strong {
+      color: $primary-color;
+    }
+  }
+
+  .card-footer {
+    background-color: lighten($primary-color, 40%);
+    padding: 10px;
+
+    button {
+      background-color: $primary-color;
+      border: none;
+      color: $secondary-color;
+      border-radius: 4px;
+      padding: 5px 10px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}

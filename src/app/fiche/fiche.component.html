@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header card-header-danger">
+      <h2 class="text-center">Enregistrement de Fiche de Décès</h2>
+    </div>
+    <!-- Error Message -->
+    <p *ngIf="errorMessage" class="alert alert-danger text-center">
+      {{ errorMessage }}
+    </p>
+
+    <form (ngSubmit)="onSubmit()">
+      <!-- Date du Décès -->
+      <div class="form-group">
+        <label for="dateDeces">Date du Décès</label>
+        <input id="dateDeces" type="date" class="form-control" [(ngModel)]="dateDeces" name="dateDeces" required />
+      </div>
+
+      <!-- Heure du Décès -->
+      <div class="form-group">
+        <label for="heureDeces">Heure du Décès</label>
+        <input id="heureDeces" type="time" class="form-control" [(ngModel)]="heureDeces" name="heureDeces" required />
+      </div>
+
+      <!-- Nom du Médecin -->
+      <div class="form-group">
+        <label for="nomMedecin">Nom du Médecin</label>
+        <input id="nomMedecin" type="text" class="form-control" [(ngModel)]="nomMedecin" name="nomMedecin" required />
+      </div>
+
+      <!-- Nom du Client -->
+      <div class="form-group">
+        <label for="nomClient">Nom du Client</label>
+        <input id="nomClient" type="text" class="form-control" [(ngModel)]="nomClient" name="nomClient" required />
+      </div>
+
+      <!-- CIN du Client -->
+      <div class="form-group">
+        <label for="cinClient">CIN du Client</label>
+        <input id="cinClient" type="text" class="form-control" [(ngModel)]="cinClient" name="cinClient"
+          pattern="^[0-9]{8}$" required />
+      </div>
+
+      <!-- Certificat de Décès -->
+      <div class="form-group">
+        <label for="certificatDeces">Certificat de Décès</label>
+        <input id="certificatDeces" type="file" class="form-control" (change)="onCertificatSelected($event)"
+          accept="image/*" required />
+        <img *ngIf="certificatPreview" [src]="certificatPreview" alt="Aperçu Certificat" class="img-fluid mt-2"
+          style="max-height: 200px;" />
+      </div>
+
+      <!-- CIN Décès -->
+      <div class="form-group">
+        <label for="cinDeces">CIN Décès</label>
+        <input id="cinDeces" type="file" class="form-control" (change)="onCinDecesSelected($event)" accept="image/*"
+          required />
+        <img *ngIf="cinDecesPreview" [src]="cinDecesPreview" alt="Aperçu CIN" class="img-fluid mt-2"
+          style="max-height: 200px;" />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-danger btn-block">Enregistrer</button>
+    </form>
+  </div>
+</div>
